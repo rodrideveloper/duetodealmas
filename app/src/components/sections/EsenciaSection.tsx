@@ -1,6 +1,12 @@
+import { useRef, useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { Volume2, VolumeX } from 'lucide-react';
 
 export function EsenciaSection() {
+    const videoRef = useRef<HTMLVideoElement>(null);
+    const [isMuted, setIsMuted] = useState(true);
+    const [userWantsAudio, setUserWantsAudio] = useState(false);
+
     const containerVariants = {
         hidden: { opacity: 0 },
         visible: {
@@ -12,6 +18,52 @@ export function EsenciaSection() {
     const itemVariants = {
         hidden: { opacity: 0, y: 30 },
         visible: { opacity: 1, y: 0, transition: { duration: 0.8 } }
+    };
+
+    useEffect(() => {
+        // Ensure playback always starts muted immediately to satisfy browser policies
+        if (videoRef.current) {
+            videoRef.current.play().catch(() => {
+                // Ignore if it fails
+            });
+        }
+
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (!videoRef.current) return;
+
+                if (entry.isIntersecting) {
+                    // Restore the user's audio preference if they scroll back into view
+                    if (userWantsAudio) {
+                        videoRef.current.muted = false;
+                        setIsMuted(false);
+                    }
+                } else {
+                    // Always mute when scrolling out of view so audio doesn't linger
+                    videoRef.current.muted = true;
+                    setIsMuted(true);
+                }
+            },
+            { threshold: 0.3 } // Trigger when 30% of the video is in view
+        );
+
+        if (videoRef.current) {
+            observer.observe(videoRef.current);
+        }
+
+        return () => {
+            // eslint-disable-next-line react-hooks/exhaustive-deps
+            if (videoRef.current) observer.unobserve(videoRef.current);
+        };
+    }, [userWantsAudio]);
+
+    const toggleMute = () => {
+        if (videoRef.current) {
+            const newMutedState = !videoRef.current.muted;
+            videoRef.current.muted = newMutedState;
+            setIsMuted(newMutedState);
+            setUserWantsAudio(!newMutedState); // Remember their choice
+        }
     };
 
     return (
@@ -29,7 +81,7 @@ export function EsenciaSection() {
                     viewport={{ once: true, margin: "-100px" }}
                 >
                     {/* Text Content */}
-                    <div className="space-y-8 relative z-10">
+                    <div className="space-y-8 relative z-10 order-2 lg:order-1 pt-8 lg:pt-0">
                         <motion.div variants={itemVariants}>
                             <h3 className="text-secondary-foreground font-semibold tracking-widest uppercase text-sm mb-2 opacity-80">
                                 El Propósito
@@ -59,12 +111,13 @@ export function EsenciaSection() {
                     </div>
 
                     {/* Reel Video Container */}
-                    <motion.div variants={itemVariants} className="relative mx-auto w-full max-w-md lg:max-w-[400px]">
+                    <motion.div variants={itemVariants} className="relative mx-auto w-full max-w-sm lg:max-w-[400px] order-1 lg:order-2 group">
                         {/* Glowing Border effect */}
                         <div className="absolute -inset-1 bg-gradient-to-tr from-primary/60 to-transparent rounded-xl blur-md opacity-70" />
 
                         <div className="relative aspect-[9/16] rounded-xl overflow-hidden border-2 border-primary/30 shadow-[0_0_40px_rgba(212,175,55,0.15)] bg-card">
                             <video
+                                ref={videoRef}
                                 autoPlay
                                 muted
                                 loop
@@ -73,7 +126,16 @@ export function EsenciaSection() {
                             >
                                 <source src="/f2mp_com_720p_instagram_video_reel_DLQXFzZSm8U.mp4" type="video/mp4" />
                             </video>
-                            <div className="absolute inset-0 ring-1 ring-inset ring-black/10 rounded-xl" />
+                            <div className="absolute inset-0 ring-1 ring-inset ring-black/10 rounded-xl pointer-events-none" />
+
+                            {/* Audio Toggle Button floating over the video */}
+                            <button
+                                onClick={toggleMute}
+                                className="absolute bottom-4 right-4 z-20 p-3 rounded-full bg-background/60 backdrop-blur-sm border border-border/50 text-foreground shadow-lg hover:scale-110 hover:bg-background/80 transition-all duration-300 pointer-events-auto"
+                                aria-label={isMuted ? "Activar sonido del video" : "Silenciar video"}
+                            >
+                                {isMuted ? <VolumeX className="w-5 h-5 text-muted-foreground" /> : <Volume2 className="w-5 h-5 text-primary" />}
+                            </button>
                         </div>
 
                         {/* Decorative Element */}
