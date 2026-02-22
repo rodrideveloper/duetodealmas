@@ -25,14 +25,14 @@ export function HeroSection() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 1, ease: "easeOut" }}
                 >
-                    <h2 className="text-xl md:text-2xl font-light tracking-[0.3em] uppercase text-primary/90 mb-4 drop-shadow-md">
+                    <h2 className="text-sm md:text-2xl font-light tracking-[0.3em] uppercase text-primary/90 mb-4 md:mb-6 drop-shadow-md">
                         Competencia de Danza
                     </h2>
-                    <h1 className="text-5xl md:text-8xl font-serif font-bold text-foreground drop-shadow-[0_5px_15px_rgba(0,0,0,0.8)] tracking-wide mb-6">
-                        DUETO <span className="text-primary italic font-light">de</span> ALMAS
+                    <h1 className="text-5xl md:text-8xl font-serif font-bold text-foreground drop-shadow-[0_5px_15px_rgba(0,0,0,0.8)] tracking-wider md:tracking-wide mb-6 md:mb-8 leading-tight">
+                        DUETO <br className="md:hidden" /> <span className="text-primary italic font-light">de</span> ALMAS
                     </h1>
-                    <p className="text-lg md:text-2xl font-light text-foreground/80 max-w-2xl mx-auto mb-10 text-balance shadow-black drop-shadow-lg">
-                        Donde la técnica se encuentra con la pasión. Demostrá tu conexión en el escenario.
+                    <p className="text-base md:text-2xl font-light text-foreground/80 max-w-2xl mx-auto mb-10 text-balance shadow-black drop-shadow-lg px-4">
+                        Donde la técnica se encuentra con la pasión. Hacé que cada movimiento cuente una historia.
                     </p>
                 </motion.div>
 

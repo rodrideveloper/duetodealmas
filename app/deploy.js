@@ -18,11 +18,16 @@ async function deploy() {
         });
         console.log("Connected to FTP server.");
 
-        // We ensure we are in the correct directory. Often it is public_html
-        await client.ensureDir("public_html");
-        await client.clearWorkingDir(); // Remove old files first
+        // Navigate to the absolute root where the legacy files were
+        await client.cd("/");
 
-        console.log("Uploading dist folder to public_html...");
+        console.log("Removing legacy files from root...");
+        const legacyFiles = ['index.html', 'style.css', 'script.js', 'sound.mp3', 'background.mp4', 'style.production.css'];
+        for (const file of legacyFiles) {
+            await client.remove(file).catch(() => { }); // Ignore if it doesn't exist anymore
+        }
+
+        console.log("Uploading dist folder to root...");
 
         // Ensure path resolution works correctly
         const distPath = path.join(__dirname, "dist");
