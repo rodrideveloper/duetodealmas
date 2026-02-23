@@ -26,14 +26,20 @@ export function Layout({ children }: LayoutProps) {
                     </div>
                 </div>
 
-                <div className="w-full max-w-4xl border-t border-border/50 pt-8 flex flex-col md:flex-row justify-between items-center">
-                    <div className="text-muted-foreground text-sm font-light mb-4 md:mb-0">
+                <div className="w-full max-w-4xl border-t border-border/50 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                    <div className="text-muted-foreground text-sm font-light text-center md:text-left">
                         © {new Date().getFullYear()} Dueto de Almas. Todos los derechos reservados.
                     </div>
                     <div className="flex gap-6">
                         <a href="https://www.instagram.com/agusbaraani/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors text-sm uppercase tracking-wider">Instagram</a>
                         <a href="https://wa.me/5492267666550" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors text-sm uppercase tracking-wider">WhatsApp</a>
                     </div>
+                </div>
+
+                <div className="w-full flex justify-center mt-12 mb-4">
+                    <span className="text-xs text-muted-foreground opacity-60 text-center">
+                        Sitio Web desarrollado por <a href="mailto:rodrigo.desarrollador@gmail.com" className="hover:text-primary transition-colors underline decoration-primary/30 underline-offset-4">rodrigo.desarrollador@gmail.com</a>
+                    </span>
                 </div>
             </footer>
         </div>

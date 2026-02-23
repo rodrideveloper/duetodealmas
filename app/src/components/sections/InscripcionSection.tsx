@@ -58,18 +58,18 @@ export function InscripcionSection() {
                         Comienza la <span className="text-primary italic font-light">Cuenta Regresiva</span>
                     </h2>
                     <p className="text-lg text-foreground/60 font-light mb-12">
-                        Asegurá el lugar de tu dúo hoy mismo. Los cupos son limitados.
+                        Asegurá tu lugar hoy mismo. Los cupos son limitados.
                     </p>
 
-                    <div className="flex flex-wrap justify-center gap-4 md:gap-8 mb-16">
+                    <div className="grid grid-cols-4 gap-2 sm:gap-4 md:gap-8 mb-16 max-w-4xl mx-auto">
                         {Object.entries(timeLeft).map(([unit, value]) => (
                             <div key={unit} className="flex flex-col items-center">
-                                <div className="w-20 h-24 md:w-32 md:h-36 glass-panel rounded-xl flex items-center justify-center border border-primary/30 shadow-[0_0_30px_rgba(212,175,55,0.1)] mb-4 bg-background">
-                                    <span className="text-4xl md:text-6xl font-serif text-primary drop-shadow-[0_2px_10px_rgba(212,175,55,0.5)]">
+                                <div className="w-full max-w-[80px] aspect-[4/5] sm:max-w-none sm:w-20 sm:h-24 md:w-32 md:h-36 glass-panel rounded-xl flex items-center justify-center border border-primary/30 shadow-[0_0_30px_rgba(212,175,55,0.1)] mb-2 sm:mb-4 bg-background mx-auto">
+                                    <span className="text-3xl sm:text-4xl md:text-6xl font-serif text-primary drop-shadow-[0_2px_10px_rgba(212,175,55,0.5)]">
                                         {value < 10 ? `0${value}` : value}
                                     </span>
                                 </div>
-                                <span className="text-sm md:text-base uppercase tracking-widest text-foreground/70 font-medium">
+                                <span className="text-[10px] sm:text-sm md:text-base uppercase tracking-wider md:tracking-widest text-foreground/70 font-medium">
                                     {unit}
                                 </span>
                             </div>
