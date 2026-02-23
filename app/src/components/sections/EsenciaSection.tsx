@@ -124,7 +124,7 @@ export function EsenciaSection() {
                                 playsInline
                                 className="w-full h-full object-cover scale-[1.02]"
                             >
-                                <source src="/f2mp_com_720p_instagram_video_reel_DLQXFzZSm8U.mp4" type="video/mp4" />
+                                <source src="/f2mp_com_720p_instagram_video_reel_DLQXFzZSm8U.mp4?v=20260222" type="video/mp4" />
                             </video>
                             <div className="absolute inset-0 ring-1 ring-inset ring-black/10 rounded-xl pointer-events-none" />
 
