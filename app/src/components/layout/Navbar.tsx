@@ -17,7 +17,7 @@ export function Navbar() {
         { name: 'Inicio', href: '#inicio' },
         { name: 'La Esencia', href: '#esencia' },
         { name: 'Evaluación', href: '#evaluacion' },
-        { name: 'Práctica', href: '#practica' },
+        { name: 'Jurados', href: '#jurados' },
     ];
 
     return (
@@ -50,6 +50,12 @@ export function Navbar() {
                         className="ml-4 px-6 py-2.5 rounded-sm border border-primary text-primary font-medium tracking-wider text-sm hover:bg-primary hover:text-primary-foreground transition-all duration-300 shadow-[0_0_15px_rgba(212,175,55,0.2)] hover:shadow-[0_0_25px_rgba(212,175,55,0.5)]"
                     >
                         INSCRIBIRSE
+                    </a>
+                    <a
+                        href="#practica"
+                        className="text-sm font-medium tracking-wide text-foreground/80 hover:text-primary transition-colors relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-[1px] auto after:bg-primary after:transition-all hover:after:w-full"
+                    >
+                        Práctica
                     </a>
                 </nav>
 
@@ -92,6 +98,13 @@ export function Navbar() {
                                 className="mt-8 px-8 py-3 bg-primary text-primary-foreground font-serif tracking-widest uppercase rounded-sm shadow-[0_0_20px_rgba(212,175,55,0.4)]"
                             >
                                 Inscribirse
+                            </a>
+                            <a
+                                href="#practica"
+                                onClick={() => setMobileMenuOpen(false)}
+                                className="font-serif text-2xl text-foreground hover:text-primary transition-colors mt-2"
+                            >
+                                Práctica
                             </a>
                         </motion.div>
                     )}

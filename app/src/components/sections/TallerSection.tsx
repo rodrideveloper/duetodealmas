@@ -31,7 +31,7 @@ export function TallerSection() {
                         </h2>
 
                         <p className="text-lg md:text-xl text-foreground/80 font-light mb-12 max-w-2xl mx-auto">
-                            Preparate para dar lo mejor en la pista. Uníte a nuestro encuentro previo
+                            Preparate para dar lo mejor en la pista. Unite a nuestro encuentro previo
                             para pulir detalles, sacarte dudas y conectar con otros bailarines antes del gran día.
                         </p>
 
@@ -41,7 +41,7 @@ export function TallerSection() {
                                     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2" /><line x1="16" y1="2" x2="16" y2="6" /><line x1="8" y1="2" x2="8" y2="6" /><line x1="3" y1="10" x2="21" y2="10" /><path d="M8 14h.01" /><path d="M12 14h.01" /><path d="M16 14h.01" /><path d="M8 18h.01" /><path d="M12 18h.01" /><path d="M16 18h.01" /></svg>
                                 </div>
                                 <h4 className="font-serif text-xl font-bold mb-1">Día</h4>
-                                <p className="text-foreground/70 uppercase tracking-wider text-sm">Lunes 9/02</p>
+                                <p className="text-foreground/70 uppercase tracking-wider text-sm">Miércoles 4/03</p>
                             </div>
 
                             <div className="p-6 rounded-xl border border-border/50 bg-background/50 backdrop-blur-sm">
@@ -81,7 +81,7 @@ export function TallerSection() {
                                     const phone = formData.get('whatsapp');
                                     const instagram = formData.get('instagram') || 'No especificado';
 
-                                    const message = `¡Hola! Quiero inscribirme al taller y la fecha del 9/02.\n\n*Mis Datos:*\n- Nombre: ${name}\n- WhatsApp: ${phone}\n- Instagram: ${instagram}`;
+                                    const message = `¡Hola! Quiero inscribirme al taller y la fecha del 4/03.\n\n*Mis Datos:*\n- Nombre: ${name}\n- WhatsApp: ${phone}\n- Instagram: ${instagram}`;
                                     const whatsappUrl = `https://wa.me/5492267666550?text=${encodeURIComponent(message)}`;
                                     window.open(whatsappUrl, '_blank');
                                 }}>

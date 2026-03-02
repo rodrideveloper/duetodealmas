@@ -21,7 +21,7 @@ export function InscripcionSection() {
 
     useEffect(() => {
         // Current target date from original code
-        const targetDate = new Date('October 20, 2026 00:00:00').getTime();
+        const targetDate = new Date('April 4, 2026 00:00:00').getTime();
 
         const updateCountdown = () => {
             const now = new Date().getTime();
