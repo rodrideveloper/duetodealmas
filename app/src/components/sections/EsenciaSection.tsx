@@ -98,14 +98,53 @@ export function EsenciaSection() {
                             Evaluamos la precisión, pero ovacionamos la vulnerabilidad, la entrega y esa sincronía profunda que trasciende el movimiento.
                         </motion.p>
 
-                        <motion.div variants={itemVariants} className="pt-4 flex flex-col sm:flex-row gap-4">
-                            <div className="glass-panel p-6 border border-border/50 bg-card/30 backdrop-blur-md rounded-md flex-1">
-                                <h4 className="font-serif text-xl text-primary mb-2">Conexión Auténtica</h4>
-                                <p className="text-sm text-foreground/60">Buscamos el diálogo invisible; cuerpos que narran una historia de a dos.</p>
+                        <motion.div variants={itemVariants} className="pt-4 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            {/* Card 1 */}
+                            <div className="group h-[160px] w-full [perspective:1000px] cursor-pointer">
+                                <div className="relative h-full w-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+                                    {/* Front */}
+                                    <div className="absolute inset-0 flex flex-col items-center justify-center p-4 [backface-visibility:hidden] glass-panel border border-border/50 bg-card/30 backdrop-blur-md rounded-xl">
+                                        <h4 className="font-sans text-xs tracking-widest uppercase text-muted-foreground mb-2">Mito</h4>
+                                        <p className="text-base sm:text-lg text-foreground/80 font-medium text-center leading-tight">"Es solo para profesionales"</p>
+                                    </div>
+                                    {/* Back */}
+                                    <div className="absolute inset-0 flex flex-col items-center justify-center p-4 [backface-visibility:hidden] [transform:rotateY(180deg)] glass-panel border border-primary/50 bg-primary/10 backdrop-blur-md rounded-xl shadow-[0_0_15px_rgba(212,175,55,0.1)]">
+                                        <h4 className="font-sans text-xs tracking-widest uppercase text-primary mb-2">Verdad</h4>
+                                        <p className="text-sm text-foreground/90 text-center leading-tight">Hay categorías para todos los niveles: Principiante, Intermedio y Avanzado.</p>
+                                    </div>
+                                </div>
                             </div>
-                            <div className="glass-panel p-6 border border-border/50 bg-card/30 backdrop-blur-md rounded-md flex-1">
-                                <h4 className="font-serif text-xl text-primary mb-2">Evolución Compartida</h4>
-                                <p className="text-sm text-foreground/60">Un espacio diseñado para inspirar, desafiar y elevar el arte de bailar en compañía.</p>
+
+                            {/* Card 2 */}
+                            <div className="group h-[160px] w-full [perspective:1000px] cursor-pointer">
+                                <div className="relative h-full w-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+                                    {/* Front */}
+                                    <div className="absolute inset-0 flex flex-col items-center justify-center p-4 [backface-visibility:hidden] glass-panel border border-border/50 bg-card/30 backdrop-blur-md rounded-xl">
+                                        <h4 className="font-sans text-xs tracking-widest uppercase text-muted-foreground mb-2">Mito</h4>
+                                        <p className="text-base sm:text-lg text-foreground/80 font-medium text-center leading-tight">"Solo importa la técnica"</p>
+                                    </div>
+                                    {/* Back */}
+                                    <div className="absolute inset-0 flex flex-col items-center justify-center p-4 [backface-visibility:hidden] [transform:rotateY(180deg)] glass-panel border border-primary/50 bg-primary/10 backdrop-blur-md rounded-xl shadow-[0_0_15px_rgba(212,175,55,0.1)]">
+                                        <h4 className="font-sans text-xs tracking-widest uppercase text-primary mb-2">Verdad</h4>
+                                        <p className="text-sm text-foreground/90 text-center leading-tight">Evaluamos la presencia escénica, conexión, y la entrega igual que la técnica.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Card 3 (Spans 2 columns on small/medium screens to look good) */}
+                            <div className="group h-[160px] w-full [perspective:1000px] cursor-pointer sm:col-span-2 mx-auto sm:w-3/4">
+                                <div className="relative h-full w-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+                                    {/* Front */}
+                                    <div className="absolute inset-0 flex flex-col items-center justify-center p-4 [backface-visibility:hidden] glass-panel border border-border/50 bg-card/30 backdrop-blur-md rounded-xl">
+                                        <h4 className="font-sans text-xs tracking-widest uppercase text-muted-foreground mb-2">Mito</h4>
+                                        <p className="text-base sm:text-lg text-foreground/80 font-medium text-center leading-tight">"Es una competencia fría"</p>
+                                    </div>
+                                    {/* Back */}
+                                    <div className="absolute inset-0 flex flex-col items-center justify-center p-4 [backface-visibility:hidden] [transform:rotateY(180deg)] glass-panel border border-primary/50 bg-primary/10 backdrop-blur-md rounded-xl shadow-[0_0_15px_rgba(212,175,55,0.1)]">
+                                        <h4 className="font-sans text-xs tracking-widest uppercase text-primary mb-2">Verdad</h4>
+                                        <p className="text-sm text-foreground/90 text-center leading-tight">Es un espacio de comunidad, aprendizaje y energía de retroalimentación.</p>
+                                    </div>
+                                </div>
                             </div>
                         </motion.div>
                     </div>
