@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1920" y2="1080" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#241719"/>
+      <stop offset=".55" stop-color="#563a38"/>
+      <stop offset="1" stop-color="#100d0d"/>
+    </linearGradient>
+    <radialGradient id="light" cx="0" cy="0" r="1" gradientTransform="matrix(0 750 -650 0 1260 130)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#d7b87e" stop-opacity=".44"/>
+      <stop offset="1" stop-color="#d7b87e" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="floor" x1="900" y1="660" x2="900" y2="1080" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#171111" stop-opacity="0"/>
+      <stop offset="1" stop-color="#100d0d"/>
+    </linearGradient>
+    <filter id="blur" x="0" y="0" width="1920" height="1080" filterUnits="userSpaceOnUse">
+      <feGaussianBlur stdDeviation="45"/>
+    </filter>
+  </defs>
+  <path fill="url(#bg)" d="M0 0h1920v1080H0z"/>
+  <path fill="url(#light)" d="M0 0h1920v1080H0z"/>
+  <g filter="url(#blur)" fill="#d5b77d" fill-opacity=".35">
+    <ellipse cx="1170" cy="850" rx="350" ry="35"/>
+    <ellipse cx="1450" cy="900" rx="270" ry="24"/>
+  </g>
+  <g fill="#151010" fill-opacity=".8">
+    <circle cx="1105" cy="346" r="48"/>
+    <path d="M1064 397c-43 34-77 94-94 180l-32 164c-7 36 42 52 57 18l67-155 26 147-38 195c-7 37 47 51 59 15l55-164 47-178c15-58-1-144-44-190-29-31-71-47-103-32Z"/>
+    <circle cx="1350" cy="396" r="43"/>
+    <path d="M1307 441c-37 26-75 66-103 121l-78 134c-18 31 21 62 47 36l107-101-47 118-112 156c-24 33 19 67 47 37l147-154 99-144c38-55 33-129-4-172-28-32-69-47-103-31Z"/>
+  </g>
+  <path fill="url(#floor)" d="M0 0h1920v1080H0z"/>
+  <path stroke="#d5b77d" stroke-opacity=".15" d="M1480 0 940 1080M1780 0l-370 1080"/>
+</svg>
