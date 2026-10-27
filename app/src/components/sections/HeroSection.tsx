@@ -12,7 +12,7 @@ export function HeroSection() {
                     playsInline
                     className="w-full h-full object-cover"
                 >
-                    <source src="/background.mp4?v=20260222" type="video/mp4" />
+                    <source src={`${import.meta.env.BASE_URL}background.mp4?v=20260222`} type="video/mp4" />
                 </video>
                 {/* Overlay Dark Gradient */}
                 <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/60 to-background z-10" />

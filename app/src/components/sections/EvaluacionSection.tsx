@@ -31,7 +31,7 @@ export function EvaluacionSection() {
                             presencia individual siempre y cuando sirva para potenciar la pieza
                             en conjunto.
                         </p>
-                        <a href="/reglamento.pdf" target="_blank" rel="noopener noreferrer" download className="inline-block mt-8 text-primary border-b border-primary pb-1 uppercase tracking-widest text-sm hover:text-foreground hover:border-foreground transition-colors">
+                        <a href={`${import.meta.env.BASE_URL}reglamento.pdf`} target="_blank" rel="noopener noreferrer" download className="inline-block mt-8 text-primary border-b border-primary pb-1 uppercase tracking-widest text-sm hover:text-foreground hover:border-foreground transition-colors">
                             Descargar Reglamento Completo
                         </a>
                     </motion.div>

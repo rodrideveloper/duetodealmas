@@ -19,7 +19,7 @@ export function Layout({ children }: LayoutProps) {
                     {/* Logo placeholder - the image will have its colors inverted to white to contrast the dark background */}
                     <div className="relative w-64 md:w-80 h-auto p-4 flex items-center justify-center">
                         <img
-                            src="/logo-agus-barani.png"
+                            src={`${import.meta.env.BASE_URL}logo-agus-barani.png`}
                             alt="Agus Barani - Creadora de Dueto de Almas"
                             className="w-full h-auto object-contain brightness-[3] sepia-[0.3] hue-rotate-[10deg] drop-shadow-[0_0_15px_rgba(212,175,55,0.4)] transition-all hover:scale-105 duration-500"
                         />
