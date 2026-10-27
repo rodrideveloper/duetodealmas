@@ -14,15 +14,31 @@ export default function Compas({ criteria, myths }: Props) {
   const whatsappHref = `https://wa.me/5492267666550?text=${encodeURIComponent('Hola, quiero información sobre Dueto de Almas 4.0 del 7 de noviembre, a las 20:00 en AB Dance Lab.')}`;
   const [playing, setPlaying] = useState(false);
   const video = useRef<HTMLVideoElement>(null);
+  const manuallyPaused = useRef(false);
   useEffect(() => {
+    const element = video.current;
+    if (!element) return;
     const preference = window.matchMedia('(prefers-reduced-motion: reduce)');
+    element.muted = true;
+    element.defaultMuted = true;
     const sync = () => {
-      if (preference.matches) video.current?.pause();
-      else void video.current?.play().catch(() => undefined);
+      element.autoplay = !preference.matches && !manuallyPaused.current;
+      if (preference.matches || manuallyPaused.current) return;
+      if (document.visibilityState === 'visible') void element.play().catch(() => setPlaying(false));
+    };
+    const onPreferenceChange = () => {
+      if (preference.matches) element.pause();
+      sync();
     };
     sync();
-    preference.addEventListener('change', sync);
-    return () => preference.removeEventListener('change', sync);
+    element.addEventListener('canplay', sync);
+    document.addEventListener('visibilitychange', sync);
+    preference.addEventListener('change', onPreferenceChange);
+    return () => {
+      element.removeEventListener('canplay', sync);
+      document.removeEventListener('visibilitychange', sync);
+      preference.removeEventListener('change', onPreferenceChange);
+    };
   }, []);
 
   return <div className="compas">
@@ -34,11 +50,11 @@ export default function Compas({ criteria, myths }: Props) {
 
     <main>
       <section className="cp-hero cp-cinema" id="inicio" aria-labelledby="cp-title">
-          <figure className="cp-background-film">
+          <figure className="cp-background-film" style={{ backgroundImage: `url(${base}ley-hero-poster.jpg)` }}>
             <video ref={video} muted loop playsInline preload="metadata" poster={`${base}ley-hero-poster.jpg`} onPlay={() => setPlaying(true)} onPause={() => setPlaying(false)}><source src={`${base}ley-hero.mp4`} type="video/mp4" /></video>
 
           </figure>
-            <button className="cp-play" aria-label={playing ? 'Pausar video' : 'Reproducir video'} onClick={() => { if (playing) video.current?.pause(); else void video.current?.play().catch(() => undefined); }}>{playing ? <Pause size={17} /> : <Play size={17} />}</button>
+            <button className="cp-play" aria-label={playing ? 'Pausar video' : 'Reproducir video'} onClick={() => { manuallyPaused.current = playing; if (playing) video.current?.pause(); else void video.current?.play().catch(() => setPlaying(false)); }}>{playing ? <Pause size={17} /> : <Play size={17} />}</button>
         <p className="cp-event-date">7 de noviembre <span>· 20:00 hs</span></p>
         <h1 id="cp-title" className="cp-accessible-title">Dueto de Almas 4.0 — La competencia salsera-bachatera</h1>
         <div className="cp-stage">
