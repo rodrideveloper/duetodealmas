@@ -357,7 +357,7 @@ function ConceptSwitcher({ active }: { active: DesignConcept }) {
 
 function App() {
   const requestedConcept = import.meta.env.DEV ? new URLSearchParams(window.location.search).get('concept') : null;
-  const active: DesignConcept = requestedConcept === 'archivo' || requestedConcept === 'solar' || requestedConcept === 'ceremonia' || requestedConcept === 'velada' || requestedConcept === 'pista' || requestedConcept === 'compas' ? requestedConcept : 'compas';
+  let active: DesignConcept = requestedConcept === 'afiche' || requestedConcept === 'archivo' || requestedConcept === 'solar' || requestedConcept === 'ceremonia' || requestedConcept === 'velada' || requestedConcept === 'pista' || requestedConcept === 'compas' ? requestedConcept : 'compas';
 
   return <><ConceptSwitcher active={active} />{active === 'afiche' ? <KineticPoster /> : active === 'compas' ? <Compas levels={levels} criteria={criteria} myths={myths} whatsappHref={whatsappHref} /> : <ConceptPreview variant={active} />}</>;
 }
