@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg">
+  <symbol id="destellos" viewBox="0 0 200 200">
+    <path fill="currentColor" d="M94 22C99 67 110 79 154 85C110 91 99 103 94 148C89 103 78 91 34 85C78 79 89 67 94 22Z"/>
+    <path fill="currentColor" opacity=".65" d="M160 115C163 136 168 141 188 144C168 147 163 152 160 173C157 152 152 147 132 144C152 141 157 136 160 115Z"/>
+    <circle cx="44" cy="147" r="3" fill="currentColor"/>
+    <circle cx="161" cy="45" r="2" fill="currentColor"/>
+  </symbol>
+  <symbol id="cinta" viewBox="0 0 200 200">
+    <path fill="currentColor" d="M8 139C55 170 146 143 158 101C172 51 96 32 76 74C61 106 106 129 153 111C113 136 49 120 66 76C85 25 180 37 169 97C158 155 62 183 8 139Z"/>
+    <path d="M13 146C61 175 164 147 179 91" fill="none" stroke="currentColor" stroke-width="1" opacity=".55"/>
+    <path d="M91 58C111 44 145 51 154 72" fill="none" stroke="currentColor" stroke-width="1" opacity=".5"/>
+  </symbol>
+  <symbol id="orbita" viewBox="0 0 200 200">
+    <g fill="none" stroke="currentColor" stroke-width="1.5">
+      <ellipse cx="100" cy="100" rx="81" ry="42" transform="rotate(-36 100 100)"/>
+      <ellipse cx="100" cy="100" rx="68" ry="55" transform="rotate(24 100 100)" opacity=".55"/>
+      <circle cx="100" cy="100" r="36" opacity=".35"/>
+    </g>
+    <circle cx="159" cy="53" r="5" fill="currentColor"/>
+    <circle cx="45" cy="137" r="3" fill="currentColor"/>
+    <path fill="currentColor" d="M101 86L104 97L115 100L104 103L101 114L98 103L87 100L98 97Z"/>
+  </symbol>
+  <symbol id="dueto" viewBox="0 0 200 200">
+    <g fill="none" stroke="currentColor" stroke-linecap="round">
+      <path d="M46 164C10 102 68 22 114 39C156 55 127 124 83 131C47 137 51 82 92 70C136 58 181 92 155 151" stroke-width="2"/>
+      <path d="M37 158C5 103 61 17 114 29" stroke-width=".8" opacity=".5"/>
+      <path d="M74 142C111 165 167 125 157 86" stroke-width=".8" opacity=".7"/>
+    </g>
+    <circle cx="114" cy="39" r="4" fill="currentColor"/>
+    <circle cx="155" cy="151" r="3" fill="currentColor"/>
+  </symbol>
+  <symbol id="flor" viewBox="0 0 200 200">
+    <g fill="none" stroke="currentColor" stroke-width="1.5">
+      <ellipse cx="100" cy="62" rx="15" ry="37"/>
+      <ellipse cx="100" cy="62" rx="15" ry="37" transform="rotate(45 100 100)"/>
+      <ellipse cx="100" cy="62" rx="15" ry="37" transform="rotate(90 100 100)"/>
+      <ellipse cx="100" cy="62" rx="15" ry="37" transform="rotate(135 100 100)"/>
+      <ellipse cx="100" cy="62" rx="15" ry="37" transform="rotate(180 100 100)"/>
+      <ellipse cx="100" cy="62" rx="15" ry="37" transform="rotate(225 100 100)"/>
+      <ellipse cx="100" cy="62" rx="15" ry="37" transform="rotate(270 100 100)"/>
+      <ellipse cx="100" cy="62" rx="15" ry="37" transform="rotate(315 100 100)"/>
+    </g>
+    <circle cx="100" cy="100" r="7" fill="currentColor"/>
+  </symbol>
+  <symbol id="abanico" viewBox="0 0 200 200">
+    <g fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round">
+      <path d="M100 176C68 125 19 110 22 65C24 27 74 15 100 32C126 15 176 27 178 65C181 110 132 125 100 176Z"/>
+      <path d="M100 176C80 113 42 87 43 53M100 176C91 113 65 69 69 34M100 176V32M100 176C109 113 135 69 131 34M100 176C120 113 158 87 157 53"/>
+      <path d="M31 89C70 66 130 66 169 89" opacity=".4"/>
+    </g>
+    <circle cx="100" cy="176" r="3.5" fill="currentColor"/>
+  </symbol>
+  <symbol id="ritmo" viewBox="0 0 200 200">
+    <g fill="none" stroke="currentColor" stroke-linecap="round">
+      <path d="M15 123C44 123 43 56 72 56S103 145 132 145S159 80 186 80" stroke-width="2"/>
+      <path d="M14 138C49 138 48 75 74 75S104 161 132 161S161 96 188 96" stroke-width="1" opacity=".55"/>
+      <path d="M22 102C43 90 44 41 71 41S103 128 130 128S152 63 182 63" stroke-width=".8" opacity=".35"/>
+    </g>
+    <circle cx="72" cy="56" r="3" fill="currentColor"/>
+    <circle cx="132" cy="145" r="3" fill="currentColor"/>
+  </symbol>
+  <symbol id="constelacion" viewBox="0 0 200 200">
+    <g fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round">
+      <path d="M36 121L74 78L124 108L163 49" stroke-dasharray="2 7" opacity=".5"/>
+      <path d="M23 50C32 37 43 36 50 44M143 153C151 168 167 168 176 158"/>
+      <circle cx="37" cy="122" r="6"/>
+      <circle cx="163" cy="49" r="4"/>
+      <circle cx="53" cy="169" r="2"/>
+    </g>
+    <path fill="currentColor" d="M74 57C77 71 81 75 95 78C81 81 77 85 74 99C71 85 67 81 53 78C67 75 71 71 74 57ZM124 96L127 105L136 108L127 111L124 120L121 111L112 108L121 105Z"/>
+    <circle cx="112" cy="32" r="2.5" fill="currentColor"/>
+    <circle cx="99" cy="158" r="2" fill="currentColor"/>
+  </symbol>
+</svg>

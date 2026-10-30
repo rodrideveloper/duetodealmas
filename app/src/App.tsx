@@ -1,3 +1,4 @@
+import { regulationsHref } from './lib/event-links';
 import { useEffect, useState } from 'react';
 import { ArrowDown, ArrowUpRight, Menu, Trophy, X } from 'lucide-react';
 import './App.css';
@@ -21,7 +22,7 @@ const criteria = [
   { name: 'Conexión', description: 'Sinergia entre ambos, comunicación no verbal y complementariedad fluida.' },
   { name: 'Interpretación musical', description: 'Interpretación del ritmo, fraseo musical y matices dinámicos.' },
   { name: 'Tiempo', description: 'Precisión y ejecución de los movimientos en el tiempo y compás correspondiente.' },
-  { name: 'Estilo', description: 'Expresión personal, postura, movimiento corporal y actitud en la pista.' },
+  { name: 'Estilo y creatividad', description: 'Originalidad en las figuras y creatividad para adaptarlas a la música, con una interpretación propia y emotiva.' },
 ];
 
 const judges = [
@@ -31,7 +32,7 @@ const judges = [
 ];
 
 const myths = [
-  { myth: '“Es solo para profesionales”', truth: 'Hay categorías para todos los niveles: Principiante, Intermedio y Avanzado.' },
+  { myth: '“Es solo para profesionales”', truth: 'No hay división entre amateurs y profesionales. La inscripción es individual y las parejas se forman por sorteo en cada ronda.' },
   { myth: '“Solo importa la técnica”', truth: 'La musicalidad, la conexión y la presencia escénica también cuentan.' },
   { myth: '“Es una competencia fría”', truth: 'Es un espacio de comunidad, aprendizaje y energía compartida.' },
 ];
@@ -130,7 +131,7 @@ function KineticPoster() {
             <p className="intro-lede">Dueto de Almas nace del deseo de crear un espacio donde la competencia no opaque al arte.</p>
             <p>Un lugar donde cada movimiento cuenta una historia y cada bailarín deja una parte de su alma en el escenario.</p>
             <p>Imaginate un escenario diseñado para elevar tu performance, con una iluminación que respira con vos y un público que siente cada paso.</p>
-            <a className="text-link" href={`${baseUrl}reglamento.pdf`} target="_blank" rel="noopener noreferrer">Leer el reglamento completo <ArrowUpRight size={15} /></a>
+            <a className="text-link" href={regulationsHref} target="_blank" rel="noopener noreferrer">Leer el reglamento completo <ArrowUpRight size={15} /></a>
           </div>
         </section>
 
@@ -168,7 +169,7 @@ function KineticPoster() {
             <h2 className="display-heading">La técnica también<br />sabe <span>escuchar.</span></h2>
             <div className="criteria-copy">
               <p>Nuestro panel de jurados observa el panorama completo. Valoramos la presencia individual siempre y cuando sirva para potenciar la pieza en conjunto.</p>
-              <a className="text-link" href={`${baseUrl}reglamento.pdf`} target="_blank" rel="noopener noreferrer">Descargar reglamento <ArrowUpRight size={15} /></a>
+              <a className="text-link" href={regulationsHref} target="_blank" rel="noopener noreferrer">Ver reglamento <ArrowUpRight size={15} /></a>
             </div>
           </div>
           <div className="criteria-list">
@@ -212,7 +213,7 @@ function KineticPoster() {
             </article>
             <article className="edition-event">
               <time className="event-date" dateTime="2026-04-04">04 <span>ABR</span></time>
-              <div className="event-info"><span className="event-tag">Competencia</span><h3>Dueto de Almas</h3><p>4 de abril de 2026</p><a className="text-link" href={`${baseUrl}reglamento.pdf`} target="_blank" rel="noopener noreferrer">Reglamento completo <ArrowUpRight size={14} /></a></div>
+              <div className="event-info"><span className="event-tag">Competencia</span><h3>Dueto de Almas</h3><p>4 de abril de 2026</p><a className="text-link" href={regulationsHref} target="_blank" rel="noopener noreferrer">Reglamento completo <ArrowUpRight size={14} /></a></div>
               <span className="event-state">Realizada</span>
             </article>
           </div>
@@ -297,7 +298,7 @@ function ConceptPreview({ variant }: { variant: Exclude<DesignConcept, 'afiche'>
           <div className="alt-statement-copy">
             <p>Dueto de Almas nace del deseo de crear un espacio donde la competencia no opaque al arte. Un lugar donde cada movimiento cuenta una historia y cada bailarín deja una parte de su alma en el escenario.</p>
             <p>Imaginate un escenario diseñado para elevar tu performance, con una iluminación que respira con vos y un público que siente cada paso.</p>
-            <a className="alt-inline-link" href={`${baseUrl}reglamento.pdf`} target="_blank" rel="noopener noreferrer">Leer el reglamento completo <ArrowUpRight size={14} /></a>
+            <a className="alt-inline-link" href={regulationsHref} target="_blank" rel="noopener noreferrer">Leer el reglamento completo <ArrowUpRight size={14} /></a>
           </div>
         </section>
 
@@ -314,7 +315,7 @@ function ConceptPreview({ variant }: { variant: Exclude<DesignConcept, 'afiche'>
         </section>
 
         <section className="alt-criteria section-pad" id="evaluacion">
-          <div className="alt-section-heading"><p className="alt-overline">El sistema</p><h2>La técnica<br />también <span>escucha.</span></h2><p>Nuestro panel observa el panorama completo y valora la presencia individual cuando potencia la pieza en conjunto.</p><a className="alt-inline-link" href={`${baseUrl}reglamento.pdf`} target="_blank" rel="noopener noreferrer">Descargar reglamento <ArrowUpRight size={14} /></a></div>
+          <div className="alt-section-heading"><p className="alt-overline">El sistema</p><h2>La técnica<br />también <span>escucha.</span></h2><p>Nuestro panel observa el panorama completo y valora la presencia individual cuando potencia la pieza en conjunto.</p><a className="alt-inline-link" href={regulationsHref} target="_blank" rel="noopener noreferrer">Ver reglamento <ArrowUpRight size={14} /></a></div>
           <div className="alt-criteria-list">{criteria.map((item, index) => <article key={item.name}><span>{String(index + 1).padStart(2, '0')}</span><h3>{item.name}</h3><p>{item.description}</p></article>)}</div>
         </section>
 
@@ -327,7 +328,7 @@ function ConceptPreview({ variant }: { variant: Exclude<DesignConcept, 'afiche'>
           <div className="alt-section-heading"><p className="alt-overline">Edición publicada · 2026</p><h2>Una fecha.<br />Muchas <span>historias.</span></h2><p>Las fechas de esta edición ya pasaron. Escribinos para enterarte cuando se anuncie la próxima.</p><a className="alt-button" href={whatsappHref} target="_blank" rel="noopener noreferrer">Consultar próxima edición <ArrowUpRight size={15} /></a></div>
           <div className="alt-events">
             <article><time dateTime="2026-03-04">04 <span>MAR</span></time><div><p>Encuentro previo</p><h3>Práctica y taller</h3><p>Para pulir detalles, sacarte dudas y conectar con otros bailarines antes de salir a la pista.</p><p>Miércoles 4 de marzo · 20:00 hs<br />Yrigoyen 2067</p></div><span className="alt-event-state">Realizado</span></article>
-            <article><time dateTime="2026-04-04">04 <span>ABR</span></time><div><p>Competencia</p><h3>Dueto de Almas</h3><p>4 de abril de 2026</p><a className="alt-inline-link" href={`${baseUrl}reglamento.pdf`} target="_blank" rel="noopener noreferrer">Reglamento completo <ArrowUpRight size={14} /></a></div><span className="alt-event-state">Realizada</span></article>
+            <article><time dateTime="2026-04-04">04 <span>ABR</span></time><div><p>Competencia</p><h3>Dueto de Almas</h3><p>4 de abril de 2026</p><a className="alt-inline-link" href={regulationsHref} target="_blank" rel="noopener noreferrer">Reglamento completo <ArrowUpRight size={14} /></a></div><span className="alt-event-state">Realizada</span></article>
           </div>
         </section>
 

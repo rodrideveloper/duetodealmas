@@ -36,9 +36,15 @@
 .cp-manifesto h2 em { color:var(--cp-orange); }
 .cp-manifesto-body { display:grid; grid-template-columns:1fr 1fr; gap:5vw; align-items:center; }
 .cp-manifesto-body p { font-size:.95rem; line-height:1.9; max-width:37rem; }
+.cp-manifesto-quote { margin:0; padding:0 0 0 2rem; border-left:1px solid #e7c45e70; }
+.cp-manifesto-body .cp-manifesto-quote p { color:var(--cp-orange); font-family:'Fraunces',Georgia,serif; font-size:clamp(1.3rem,2.2vw,2rem); font-style:italic; line-height:1.5; letter-spacing:-.025em; }
+.cp-manifesto-quote p:first-child { margin-top:0; }
+.cp-manifesto-quote footer { font-size:.75rem; line-height:1.8; }
+.cp-manifesto-quote footer span { color:#f5f0dfb8; }
 .cp-flower { color:var(--cp-orange); font-size:12rem; line-height:1; justify-self:center; transform:rotate(12deg); }
 .cp-text-link { display:inline-flex; align-items:center; gap:2rem; border-bottom:1px solid currentColor; padding:.6rem 0; margin-top:1rem; font-size:.8rem; }
 .cp-beliefs { margin-top:4rem; border-top:1px solid #e7c45e40; }
+.cp-beliefs-title { margin:1.5rem 0 .5rem; color:var(--cp-orange); font-family:'Fraunces',Georgia,serif; font-size:clamp(1.6rem,3vw,2.2rem); font-weight:500; letter-spacing:-.035em; line-height:1.2; }
 .compas details { border-bottom:1px solid #e7c45e40; }
 .compas summary { cursor:pointer; display:flex; align-items:center; justify-content:space-between; gap:1rem; list-style:none; padding:1.25rem 0; font-size:1rem; }
 .compas summary::-webkit-details-marker { display:none; }
@@ -62,6 +68,17 @@
 .cp-score-dot { width:12px; height:12px; border-radius:50%; border:1px solid var(--cp-orange); flex-shrink:0; }
 .cp-score-list details[open] .cp-score-dot { background:var(--cp-orange); }
 .cp-score-list details > p { padding-left:1.8rem; }
+.cp-judges { padding:4rem 8vw 6rem; scroll-margin-top:2rem; }
+.cp-judges-heading { display:grid; grid-template-columns:1fr 1fr; gap:5vw; align-items:center; margin-bottom:2.5rem; }
+.cp-judges-heading h2 { margin-bottom:0; }
+.cp-judges-heading > div:last-child > p { max-width:29rem; font-size:.95rem; line-height:1.9; }
+.cp-judges-heading .cp-eyebrow { color:var(--cp-orange); }
+.cp-judges-gallery { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:2rem; }
+.cp-judge { min-width:0; margin:0; }
+.cp-judge img { display:block; width:100%; height:auto; aspect-ratio:3 / 4; object-fit:cover; border:1px solid #e7c45e40; border-radius:150px 150px 12px 12px; background:#1e3728; }
+.cp-judge figcaption { padding:1.3rem 0; }
+.cp-judge figcaption p { color:var(--cp-orange); font-size:.65rem; line-height:1.7; text-transform:uppercase; letter-spacing:.07em; }
+.cp-judge h3 { margin:.6rem 0 0; font-family:'Fraunces',Georgia,serif; font-size:clamp(1.6rem,2.7vw,2.7rem); font-weight:500; letter-spacing:-.04em; line-height:1.15; }
 .cp-edition { padding:4rem 8vw 6rem; }
 .cp-ticket { display:grid; grid-template-columns:1.2fr 1fr; border-radius:26px; background:var(--cp-ink); color:var(--cp-paper); margin-top:1.5rem; }
 .cp-ticket-title { padding:3.5rem; }
@@ -107,6 +124,7 @@
  .cp-film .cp-play { top:1rem; bottom:auto; right:auto; left:calc(50% - 19px); }.cp-film figcaption { max-width:62%; font-size:.6rem; line-height:1.5; }
  .cp-manifesto,.cp-levels,.cp-score,.cp-edition { padding:4rem 1.3rem; }.compas h2 { font-size:clamp(2.4rem,8.7vw,3.8rem); }
  .cp-manifesto-body { grid-template-columns:1fr;gap:1rem; }.cp-flower { display:none; }.cp-manifesto-body p { font-size:.9rem; }.cp-beliefs { margin-top:2rem; }
+ .cp-manifesto-quote { margin-top:1.5rem; padding-left:1.2rem; }
  .cp-levels,.cp-score { grid-template-columns:1fr;gap:2rem; }.cp-level-disc { max-width:320px;padding:2rem; }.cp-level-options button { padding:.65rem .8rem; }.cp-score-list summary { font-size:1.35rem; }
  .cp-ticket { grid-template-columns:1fr; }.cp-ticket-title,.cp-ticket-dates { padding:2rem; }.cp-ticket-dates { border-left:0;border-top:1px dashed #f2efdf70; }.cp-ticket-title h2 { font-size:2.6rem; }
  .cp-closing { padding:2rem 1.3rem 4rem; }.cp-closing h2 { font-size:clamp(3.6rem,13vw,6rem); }.cp-footer { gap:1rem;padding-bottom:5rem; }.cp-footer small { flex-basis:100%;margin:0; }
@@ -144,3 +162,115 @@
 }
 
 .cp-cinema > .cp-event-date,.cp-cinema > .cp-stage,.cp-cinema > .cp-hero-foot { position:relative; z-index:1; }
+
+/* Shared lightweight SVG ornaments, kept behind the content. */
+.cp-ornament { display:block; width:160px; height:160px; color:var(--cp-orange); pointer-events:none; user-select:none; flex-shrink:0; }
+.cp-prizes,.cp-registration,.cp-manifesto,.cp-judges,.cp-closing { position:relative; isolation:isolate; }
+.cp-prizes,.cp-registration,.cp-judges,.cp-closing { overflow:clip; }
+.cp-ornament-hero { position:absolute; z-index:1; width:90px; height:90px; top:2rem; right:10vw; opacity:.8; transform:rotate(12deg); }
+.cp-ornament-prizes { position:absolute; z-index:-1; right:3%; top:1.5rem; width:200px; height:200px; opacity:.35; transform:rotate(-12deg); }
+.cp-ornament-inline { width:42px; height:42px; }
+.cp-ornament-registration { position:absolute; z-index:-1; width:330px; height:330px; bottom:-5rem; left:-7rem; color:var(--cp-paper); opacity:.12; transform:rotate(-20deg); }
+.cp-ornament-manifesto { position:absolute; z-index:-1; right:5vw; top:3.5rem; width:220px; height:220px; opacity:.3; transform:rotate(15deg); }
+.cp-ornament-judges { position:absolute; z-index:-1; right:-5rem; top:0; width:250px; height:250px; opacity:.16; transform:rotate(25deg); }
+.cp-ornament-closing-orbit { position:absolute; z-index:-1; left:-3rem; top:4rem; width:290px; height:290px; opacity:.25; transform:rotate(-18deg); }
+.cp-ornament-closing-rhythm { position:absolute; z-index:-1; right:-3rem; bottom:4rem; width:260px; height:260px; opacity:.3; transform:rotate(-25deg); }
+@media(max-width:760px) {
+ .cp-ornament-hero { width:52px; height:52px; right:4vw; top:1.7rem; opacity:.65; }
+ .cp-ornament-prizes { width:100px; height:100px; top:2rem; right:.6rem; opacity:.4; }
+ .cp-ornament-inline { width:34px; height:34px; }
+ .cp-ornament-registration { width:230px; height:230px; left:-5rem; bottom:-3rem; opacity:.1; }
+ .cp-ornament-manifesto { width:100px; height:100px; top:1rem; right:.5rem; opacity:.22; }
+ .cp-ornament-judges { width:150px; height:150px; right:-3rem; opacity:.16; }
+ .cp-ornament-closing-orbit { width:150px; height:150px; left:-3rem; top:1rem; opacity:.22; }
+ .cp-ornament-closing-rhythm { width:150px; height:150px; right:-3rem; bottom:2.5rem; opacity:.22; }
+}
+
+/* Prize announcement, before registration. */
+.cp-prizes { position:relative; margin:3rem 4vw 0; padding:4rem 5vw 2.5rem; border:1px solid #e7c45e65; border-radius:28px; background:radial-gradient(ellipse at 95% 15%,#e7c45e15,transparent 55%),#122c1d; scroll-margin-top:2rem; }
+.cp-prizes-heading .cp-eyebrow { color:var(--cp-orange); }
+.cp-prizes-heading h2 { margin:1.2rem 0 2rem; font-size:clamp(2.6rem,4.5vw,4.6rem); }
+.cp-prizes-main { display:flex; align-items:center; justify-content:space-between; gap:2rem; padding-bottom:2.5rem; }
+.cp-prizes-total { min-width:0; }
+.cp-prizes-amount { margin:0; color:var(--cp-orange); font-family:'Fraunces',Georgia,serif; font-size:clamp(3.6rem,11.5vw,12rem); font-weight:500; line-height:1; letter-spacing:-.065em; white-space:nowrap; font-variant-numeric:lining-nums; }
+.cp-prizes-caption { margin:.6rem 0 0; font-size:clamp(1.2rem,2.3vw,2rem); font-family:'Fraunces',Georgia,serif; font-style:italic; }
+.cp-prizes-emblem { display:flex; flex-shrink:0; flex-direction:column; align-items:center; justify-content:center; gap:1.2rem; width:clamp(150px,18vw,230px); aspect-ratio:1; color:var(--cp-orange); border:1px solid #e7c45e80; border-radius:50%; outline:1px solid #e7c45e30; outline-offset:-10px; transform:rotate(8deg); }
+.cp-prizes-emblem span { font-size:.5rem; text-transform:uppercase; letter-spacing:.18em; }
+.cp-prizes-extras { display:grid; grid-template-columns:1fr 1fr 1.6fr; gap:2rem; margin:0; padding:2rem 0; list-style:none; border-top:1px solid #e7c45e40; border-bottom:1px solid #e7c45e40; }
+.cp-prizes-extras li { display:flex; align-items:center; gap:1rem; font-size:1.1rem; }
+.cp-prizes-extras svg { flex-shrink:0; color:var(--cp-orange); }
+.cp-prizes-extras small { display:block; margin-top:.3rem; font-size:.75rem; color:#f5f0dfb8; line-height:1.6; }
+.cp-prizes-footer { display:flex; align-items:center; justify-content:space-between; gap:2rem; padding-top:2rem; }
+.cp-prizes-footer p { max-width:24rem; font-size:.9rem; line-height:1.7; }
+.cp-prizes-cta { flex-shrink:0; background:var(--cp-orange); color:var(--cp-paper)!important; font-size:.85rem; font-weight:600; }
+.cp-prizes-cta:hover { background:var(--cp-ink); }
+.cp-highlights { padding:2.5rem 0; border-bottom:1px solid #e7c45e40; }
+.cp-highlights-heading .cp-eyebrow { color:var(--cp-orange); }
+.cp-highlights-heading h3 { display:flex; align-items:center; gap:1.5rem; margin:1rem 0; font-family:'Fraunces',Georgia,serif; font-size:clamp(2.4rem,4.5vw,4rem); font-weight:500; font-style:italic; letter-spacing:-.05em; line-height:1.1; }
+.cp-highlights-heading h3 span { color:var(--cp-orange); font-size:.6em; font-style:normal; }
+.cp-highlights-heading > p:last-child { max-width:28rem; color:#f5f0dfb8; font-size:.9rem; line-height:1.8; }
+.cp-highlights-list { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:0 2rem; margin:1.5rem 0 0; padding:0; list-style:none; }
+.cp-highlights-list li { display:flex; align-items:center; gap:1rem; padding:1.3rem 0; border-bottom:1px solid #e7c45e25; font-size:clamp(1rem,1.6vw,1.2rem); line-height:1.5; }
+.cp-highlights-list svg { flex-shrink:0; color:var(--cp-orange); }
+@media(min-width:761px) and (max-width:1100px) {
+ .cp-header-note { display:none; }
+ .cp-header nav { gap:1rem; }
+}
+@media(max-width:760px) {
+ .cp-prizes { margin:2rem 1.2rem 0; padding:2.5rem 1.4rem 2rem; border-radius:20px; }
+ .cp-prizes-heading h2 { font-size:clamp(2.5rem,10vw,3.8rem); }
+ .cp-prizes-main { gap:1rem; padding-bottom:2rem; }
+ .cp-prizes-emblem { width:clamp(64px,12vw,88px); gap:0; outline-offset:-6px; }
+ .cp-prizes-emblem svg { width:40px; height:40px; }
+ .cp-prizes-emblem span { display:none; }
+ .cp-prizes-amount { font-size:clamp(2rem,10.5vw,5rem); }
+ .cp-prizes-caption { font-size:1.35rem; }
+ .cp-prizes-extras { grid-template-columns:1fr 1fr; gap:1.8rem 1rem; padding:1.8rem 0; }
+ .cp-prizes-extras li { gap:.7rem; font-size:1rem; }
+ .cp-prizes-extras li:last-child { grid-column:1 / -1; }
+ .cp-prizes-footer { flex-direction:column; align-items:stretch; gap:1rem; padding-top:1.5rem; }
+ .cp-prizes-footer p { margin:0; font-size:.85rem; }
+ .cp-prizes-cta { justify-content:space-between; padding:1rem 1.2rem; }
+ .cp-highlights { padding:2rem 0; }
+ .cp-highlights-list { grid-template-columns:1fr; margin-top:1rem; }
+ .cp-highlights-list li { padding:1.1rem 0; }
+ .cp-judges { padding:3rem 1.3rem 4rem; }
+ .cp-judges-heading { grid-template-columns:1fr; gap:1rem; margin-bottom:2rem; }
+ .cp-judges-gallery { grid-template-columns:1fr; gap:1.5rem; }
+ .cp-judge { display:grid; grid-template-columns:minmax(100px,160px) minmax(0,1fr); gap:1.3rem; align-items:center; }
+ .cp-judge figcaption { padding:0; }
+ .cp-judge h3 { font-size:clamp(1.6rem,6vw,2.2rem); }
+}
+
+/* Registration is the primary action throughout the published design. */
+.cp-header .cp-registration-button { background:var(--cp-orange); color:var(--cp-paper); border-color:var(--cp-orange); font-weight:600; white-space:nowrap; }
+.cp-registration { display:grid; grid-template-columns:1.3fr 1fr; align-items:center; gap:5vw; margin:3rem 4vw 0; padding:4rem 5vw; border-radius:28px; background:var(--cp-orange); color:var(--cp-paper); scroll-margin-top:2rem; }
+.cp-registration-copy h2 { margin:1.5rem 0; font-size:clamp(3rem,6vw,6rem); }
+.cp-registration-copy > p:not(.cp-eyebrow) { max-width:31rem; font-size:1rem; line-height:1.8; }
+.cp-registration-copy .cp-registration-event { margin-top:1.5rem; font-size:.85rem; font-weight:600; }
+.cp-registration-workshop { margin-top:2rem; padding-top:1.5rem; border-top:1px solid #1e372840; }
+.cp-registration-workshop h3 { margin:.8rem 0 1rem; font-family:'Fraunces',Georgia,serif; font-size:clamp(1.8rem,3vw,2.8rem); font-weight:500; letter-spacing:-.045em; line-height:1.15; }
+.cp-registration-workshop h3 em { font-weight:400; }
+.cp-registration-workshop > p:last-child { max-width:29rem; font-size:.9rem; line-height:1.8; }
+.cp-registration-action { display:flex; flex-direction:column; align-items:center; text-align:center; padding:2.4rem 1.8rem; border-radius:20px; background:var(--cp-ink); color:var(--cp-paper); box-shadow:0 12px 32px #1e372810; }
+.cp-registration-price { margin:1.3rem 0 .6rem; font-family:'Fraunces',Georgia,serif; font-size:clamp(2.8rem,5.5vw,5.5rem); font-weight:500; line-height:1; letter-spacing:-.065em; font-variant-numeric:lining-nums; }
+.cp-registration-includes { max-width:16rem; margin:0; font-size:.85rem; line-height:1.7; }
+.cp-registration-deadline { width:100%; margin:1.6rem 0; padding:1.2rem 0; border-top:1px solid #1e372830; border-bottom:1px solid #1e372830; }
+.cp-registration-deadline span { display:block; font-size:.65rem; text-transform:uppercase; letter-spacing:.13em; margin-bottom:.6rem; }
+.cp-registration-deadline time { display:block; font-size:.9rem; font-weight:600; line-height:1.5; }
+.cp-registration-action .cp-registration-button { justify-content:space-between; width:100%; max-width:350px; padding:1.2rem 1.6rem; background:var(--cp-paper); color:var(--cp-ink); border-color:var(--cp-paper); font-size:1.05rem; font-weight:600; }
+.cp-registration-action .cp-registration-button:hover { background:#10261b; }
+.cp-registration-note { margin:1rem 0 .5rem; font-size:.75rem; line-height:1.7; }
+.cp-registration-action .cp-text-link { gap:1rem; font-size:.8rem; }
+.cp-registration a:focus-visible { outline-color:var(--cp-paper); }
+@media(max-width:760px) {
+ .cp-header .cp-registration-button { padding:.8rem 1rem; gap:.7rem; }
+ .cp-registration { grid-template-columns:1fr; gap:2rem; margin:2rem 1.2rem 0; padding:2.5rem 1.4rem; border-radius:20px; }
+ .cp-registration-copy h2 { font-size:clamp(2.5rem,10vw,3.8rem); }
+ .cp-registration-copy > p:not(.cp-eyebrow) { font-size:.9rem; }
+ .cp-registration-action { align-items:stretch; padding:2rem 1.2rem; }
+ .cp-registration-price { font-size:clamp(2.8rem,12vw,4.5rem); }
+ .cp-registration-includes { align-self:center; }
+ .cp-registration-action .cp-registration-button { max-width:none; }
+ .cp-registration-action .cp-text-link { align-self:center; }
+}
